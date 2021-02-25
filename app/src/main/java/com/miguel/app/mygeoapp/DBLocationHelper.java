@@ -22,13 +22,20 @@ public class DBLocationHelper extends SQLiteOpenHelper {
                 "(" +
                 " id INTEGER PRIMARY KEY, " +
                 " lat REAL, " +
-                " lng REAL " +
+                " lng REAL, " +
+                " address TEXT " +
                 ");");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS positions");
+    }
+
+    public void cleanDB() {
+        SQLiteDatabase db =  this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS positions");
+        onCreate(db);
     }
 }
 
