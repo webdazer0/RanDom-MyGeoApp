@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
+import com.miguel.app.mygeoapp.model.DBLocationHelper;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -56,8 +58,6 @@ public class MyLocation implements LocationListener {
         DBLocationHelper dbHelper = new DBLocationHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.rawQuery("INSERT INTO positions ( lat, lng, address ) VALUES (?,?,?)", new String[]{String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()), myLocality}).moveToNext();
-
-
 
 
     }

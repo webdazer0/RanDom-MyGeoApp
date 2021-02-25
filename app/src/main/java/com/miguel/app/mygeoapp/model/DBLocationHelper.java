@@ -1,4 +1,4 @@
-package com.miguel.app.mygeoapp;
+package com.miguel.app.mygeoapp.model;
 
 
 import android.content.Context;

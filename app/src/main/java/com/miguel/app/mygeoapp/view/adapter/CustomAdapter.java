@@ -1,4 +1,4 @@
-package com.miguel.app.mygeoapp;
+package com.miguel.app.mygeoapp.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.miguel.app.mygeoapp.model.MyAddress;
+import com.miguel.app.mygeoapp.R;
 
 import java.util.List;
 
