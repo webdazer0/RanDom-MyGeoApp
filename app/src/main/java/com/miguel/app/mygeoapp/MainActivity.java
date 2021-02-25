@@ -3,6 +3,7 @@ package com.miguel.app.mygeoapp;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -27,5 +28,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Devi abilitare GPS", Toast.LENGTH_SHORT).show();
         }
+
+        DBLocationHelper dbHelper = new DBLocationHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
     }
 }
