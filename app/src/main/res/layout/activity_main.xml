@@ -17,20 +17,26 @@
         android:background="@color/black"
          />
 
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aggiorna"
-        />
+        android:orientation="vertical"
+>
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aggiorna"
+            />
 
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancella"
-        />
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancella"
+            />
 
+    </LinearLayout>
     <ListView
         android:id="@+id/myList"
         android:layout_width="match_parent"
