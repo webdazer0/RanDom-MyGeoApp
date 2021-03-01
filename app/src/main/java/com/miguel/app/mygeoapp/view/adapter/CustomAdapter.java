@@ -1,12 +1,15 @@
 package com.miguel.app.mygeoapp.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.miguel.app.mygeoapp.MapActivity;
 import com.miguel.app.mygeoapp.model.MyAddress;
 import com.miguel.app.mygeoapp.R;
 
@@ -57,6 +60,13 @@ public class CustomAdapter extends BaseAdapter {
         txtLat.setText(addresses.get(position).getLatitude());
         txtLng.setText(addresses.get(position).getLongitude());
         txtAddress.setText(addresses.get(position).getAddress());
+
+        convertView.setOnClickListener(v -> {
+            Intent intent = new Intent(ctx, MapActivity.class);
+            intent.putExtra("latitude", addresses.get(position).getLatitude());
+            intent.putExtra("longitude", addresses.get(position).getLongitude());
+            ctx.startActivity(intent);
+        });
 
 //        btnDelete.setOnClickListener((View.OnClickListener) v -> {
 //            Log.i("MITO_TAG", "Hai clicatto il idbtn: " + getItemApiId(position) + " e anche: id: " + getItemId(position));
