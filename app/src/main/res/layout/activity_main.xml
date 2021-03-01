@@ -27,8 +27,9 @@
             android:id="@+id/btnUpdate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginHorizontal="20dp"
+            android:layout_weight="0.3"
+            android:layout_marginHorizontal="15dp"
+            android:textSize="12sp"
             android:text="Aggiorna"
             />
 
@@ -36,9 +37,20 @@
             android:id="@+id/btnDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginHorizontal="20dp"
+            android:layout_weight="0.3"
+            android:textSize="12sp"
+            android:layout_marginHorizontal="15dp"
             android:text="Cancella"
+            />
+
+        <Button
+            android:id="@+id/btnGoMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:textSize="12sp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Vedi Mappa"
             />
 
     </LinearLayout>

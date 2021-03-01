@@ -2,6 +2,7 @@ package com.miguel.app.mygeoapp;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnUpdate;
     Button btnDelete;
+    Button btnGoMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+        btnGoMap = findViewById(R.id.btnGoMap);
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         MyLocation myLocation = new MyLocation(this);
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnUpdate.setOnClickListener(btnUpdateEvent);
         btnDelete.setOnClickListener(btnDeleteEvent);
+        btnGoMap.setOnClickListener(btnGoMapEvent);
     }
 
     private View.OnClickListener btnUpdateEvent = v -> reloadData(); // Aggiorna i dati | Svuota la lista locale (addresses) | la ripopola
@@ -74,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase(); // WRITE
         dbHelper.cleanDB(); // Cancella il database e lo ricrea ... da non fare...
         reloadData();
+    };
+
+    private View.OnClickListener btnGoMapEvent = v -> { // Cancella tutti i dati dal database
+        startActivity(new Intent(this, MapActivity.class));
     };
 
 
