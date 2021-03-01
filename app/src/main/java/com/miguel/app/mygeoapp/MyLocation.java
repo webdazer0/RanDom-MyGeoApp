@@ -3,15 +3,17 @@ package com.miguel.app.mygeoapp;
 import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.miguel.app.mygeoapp.model.DBLocationHelper;
 
